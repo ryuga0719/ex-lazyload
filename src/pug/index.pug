@@ -1,0 +1,14 @@
+extends /tmp/_layout.pug
+block head
+    title Lazyloadの実証実験(2021/11/04)
+    meta(name="description" content="indexの説明")
+    meta(name="keywords" content="index")
+
+block content
+    ul
+      - for (let i = 0; i < 100; i++)
+        li.item
+          img(src=`./assets/img/sample.webp?${i}`, alt="", loading="lazy", width="640", height="800")
+          //- img(src="", class="lazyload", alt="", data-src=`./assets/img/sample.webp?${i}`, width="640", height="800")
+          //- img(src=`./assets/img/sample.jpg?${i}`, alt="", loading="lazy")
+          //- img(src=`./assets/img/sample.jpg?${i}`, alt="", width="640", height="800")
